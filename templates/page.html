@@ -1,15 +1,33 @@
 <html>
-    <head>
-        <title>Sample app</title>
-    </head>
-    <body>
-        <h1>{{ title }}</h1>
-        <p><a href="/docs">Docs</a></p>
-        <p><a href="/about">About</a></p>
-        <p><a href="/">Home</a></p>
-        <div class="col-lg-8  offset-lg-2">
-            <h3 class="mt-5">Live Streaming</h3>
-            <img src="{{ url_for('video_feed') }}" width="100%">
-        </div>
-    </body>
+  <head>
+    <title>Sample app</title>
+    <link
+      ...
+      href="{{ url_for('static', filename='stylesheets/style.css') }}"
+    />
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+  </head>
+  <body>
+    <h1>Move.io</h1>
+    <navbar>
+      <ul id="logo-menu">
+        <li id="logo-list">
+          <a href="home.html"
+            ><img id="logo" src="../static/images/Logo.png"
+          /></a>
+        </li>
+        <li id="hackademy">HACKADEMY</li>
+      </ul>
+      <ul id="menu-items">
+        <li><a href="">MAKE A COURSE</a></li>
+        <li><a href="classes.html">CLASSES</a></li>
+        <li><a href="">ABOUT</a></li>
+        <li><a href="">LOG IN/SIGN UP</a></li>
+      </ul>
+    </navbar>
+    <div class="col-lg-8 offset-lg-2">
+      <h3 class="mt-5">Live Streaming</h3>
+      <img src="{{ url_for('video_feed') }}" width="100%" />
+    </div>
+  </body>
 </html>
