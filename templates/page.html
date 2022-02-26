@@ -8,26 +8,23 @@
     <link rel="stylesheet" href="../static/styles/styles.css" />
   </head>
   <body>
-    <h1>Move.io</h1>
     <navbar>
       <ul id="logo-menu">
-        <li id="logo-list">
-          <a href="home.html"
-            ><img id="logo" src="../static/images/Logo.png"
-          /></a>
-        </li>
-        <li id="hackademy">HACKADEMY</li>
+        <li id="logo-list"></li>
+        <li id="moveio">Move.io</li>
       </ul>
       <ul id="menu-items">
         <li><a href="">CHALLENGE</a></li>
         <li><a href="lesson.html">LESSON</a></li>
         <li><a href="">ABOUT</a></li>
-        <li><a href="">LOG IN/SIGN UP</a></li>
+        <li><a href="">LOG IN</a></li>
       </ul>
     </navbar>
-    <div class="col-lg-8 offset-lg-2">
-      <h3 class="mt-5">Live Streaming</h3>
-      <img src="{{ url_for('video_feed') }}" width="100%" />
-    </div>
+    <section id='hero'>
+        <div class="col-lg-8 offset-lg-2">
+        <h3 class="mt-5">Live Streaming</h3>
+        <img src="{{ url_for('video_feed') }}" width="100%" />
+        </div>
+    <section id='hero'>
   </body>
 </html>
