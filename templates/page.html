@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Sample app</title>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        <p><a href="/docs">Docs</a></p>
+        <p><a href="/about">About</a></p>
+        <p><a href="/">Home</a></p>
+        <div class="col-lg-8  offset-lg-2">
+            <h3 class="mt-5">Live Streaming</h3>
+            <img src="{{ url_for('video_feed') }}" width="100%">
+        </div>
+    </body>
+</html>
