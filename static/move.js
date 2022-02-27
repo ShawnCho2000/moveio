@@ -44,4 +44,13 @@
    */
   function gen(elType) {
     return document.createElement(elType);
-  }})();
+  }
+
+
+  function toggleview() {
+    buttonText = qs()
+    id(buttonText).classList.remove('hidden')
+    id(buttonText).classList.add('hidden')
+  }
+
+})();
