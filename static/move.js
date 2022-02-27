@@ -65,6 +65,7 @@
 
   function enableOnScreenButtons() {
     let navbarLinks = qsa("#menu-items li");
+    console.log(navbarLinks);
     for (let i = 0; i < navbarLinks.length; i++) {
       navbarLinks[i].addEventListener("click", (e) =>
         toggleViewOn(e, navbarLinks)
@@ -81,6 +82,7 @@
   }
 
   function toggleViewOn(e, navbarLinks) {
+      console.log(navbarLinks);
     let thisid = e.currentTarget.textContent.toLowerCase();
     let pages = qsa(".pages");
     for (let i = 0; i < pages.length; i++) {
