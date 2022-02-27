@@ -244,6 +244,19 @@ ul {
   cursor: pointer;
 }
 
+.name {
+  font-size: 32;
+}
+
+.ans {
+  color: rgb(255, 99, 132)
+}
+
+.title {
+  font-size: 27;
+  margin-bottom: 0px
+}
+
 #classes {
   padding-top: 20vh;
   width: 75%;
@@ -280,6 +293,7 @@ ul {
 #profileCard {
   display: flex;
   padding-top: 100px;
+  width: 70%;
 }
 
 #rightCard {
