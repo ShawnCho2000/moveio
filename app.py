@@ -7,6 +7,11 @@ import numpy.linalg as LA
 import json
 import os
 
+f = open('data.json', "r")
+data = json.load(f)
+print(sorted(data.items(), key=lambda x: x[1][0], reverse=True))
+f.close()
+
 classes = {
     "yoga": {},
     "pullups" : {},
@@ -62,6 +67,11 @@ def video_feed3():
 def score():
     return str(i)
 
+@app.route('/leaderboard')
+def leaderboard():
+    sorting = (sorted(data.items(), key=lambda x: x[1][0], reverse=True))
+    return {'data': sorting}
+
 def generate_frames():
     pTime = 0
     cTime = 0
@@ -77,7 +87,7 @@ def generate_frames():
                     # print(id, lm)
                     h, w, c = img.shape
                     cx, cy = int(lm.x * w), int(lm.y * h)
-                    print(id, cx, cy)
+                    # print(id, cx, cy)
                     # if id == 4:
                     cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED)
 
@@ -110,7 +120,8 @@ def generate_frames2():
     with mp_holistic.Holistic(
             min_detection_confidence=0.5,
             min_tracking_confidence=0.5) as holistic:
-        print(time.perf_counter() - timeStart)
+        # print(time.perf_counter() - timeStart)
+        done = False
         while True:
             success, img = cap.read()
             if not success:
@@ -135,6 +146,14 @@ def generate_frames2():
                         cv2.putText(img, f'Standard deviation of arm angle at down position: {round(np.std(angle), 2)}', (50, 250), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
                         cv2.putText(img, f'Standard deviation of arm angle at down position: {round(np.std(angle), 2)}', (50, 250), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
                         cv2.putText(img, f'You averaged {i / 20} pushups per second', (50, 350), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
+
+                        if not done:
+                            if data["Shawn"][0] < i:
+                                data["Shawn"] = ([i, round(np.average(angle), 2)])
+                            print(data)
+                            with open('data.json', 'w') as outfile:
+                                outfile.write(json.dumps(data))
+                            done = True
 
                         img.flags.writeable = True
                         img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
@@ -194,8 +213,8 @@ def generate_frames2():
                                     deg = np.rad2deg(rad)
                                     angle.append(deg)
 
-                                    print(rad)  # 1.35970299357215
-                                    print(deg)  # 77.9052429229879
+                                    # print(rad)  # 1.35970299357215
+                                    # print(deg)  # 77.9052429229879
                                 elif counter >= 0:
                                     counter += 1
                         # if results.pose_landmarks.landmark[16] and results.pose_landlandmarks.landmark[15]:
@@ -233,7 +252,7 @@ def generate_frames3():
     with mp_holistic.Holistic(
             min_detection_confidence=0.5,
             min_tracking_confidence=0.5) as holistic:
-        print(time.perf_counter() - timeStart)
+        # print(time.perf_counter() - timeStart)
         while True:
             success, img = cap.read()
             if not success:
@@ -317,8 +336,8 @@ def generate_frames3():
                                     deg = np.rad2deg(rad)
                                     angle.append(deg)
 
-                                    print(rad)  # 1.35970299357215
-                                    print(deg)  # 77.9052429229879
+                                    # print(rad)  # 1.35970299357215
+                                    # print(deg)  # 77.9052429229879
                                 elif counter >= 0:
                                     counter += 1
                         # if results.pose_landmarks.landmark[16] and results.pose_landlandmarks.landmark[15]:
