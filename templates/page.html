@@ -6,6 +6,9 @@
       href="{{ url_for('static', filename='stylesheets/style.css') }}"
     />
     <link rel="stylesheet" href="../static/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Questrial&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1>Move.io</h1>
@@ -19,17 +22,22 @@
         <li id="hackademy">HACKADEMY</li>
       </ul>
       <ul id="menu-items">
-        <li><a href="">CHALLENGE</a></li>
-        <li><a href="lesson.html">CLASSES</a></li>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="">LOG IN/SIGN UP</a></li>
+        <li><a href="">Challenges</a></li>
+        <li><a href="classes.html">Classes</a></li>
+        <li><a href="">Leaderboard</a></li>
+        <li><a href="">Login</a></li>
       </ul>
     </navbar>
-    <section>
+    <section id='hero'>
+
         <div class="col-lg-8 offset-lg-2">
         <h3 class="mt-5">Live Streaming</h3>
         <img src="{{ url_for('video_feed') }}" width="100%" />
         </div>
+
+   
+      <div id='demonstration'></div>
+
     </section>
 
     <section id="lesson"> 
