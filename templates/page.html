@@ -1,16 +1,43 @@
 <html>
-    <head>
-        <title>Sample app</title>
-    </head>
-    <body>
-        <h1>{{ title }}</h1>
-        <p><a href="/docs">Docs</a></p>
-        <p><a href="/about">About</a></p>
-        <p><a href="/">Home</a></p>
+  <head>
+    <title>Sample app</title>
+    <link
+      ...
+      href="{{ url_for('static', filename='stylesheets/style.css') }}"
+    />
+    <link rel="stylesheet" href="../static/styles/styles.css" />
+    <script src="../static/move.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
 
-        <div class="col-lg-8  offset-lg-2">
-            <h3 class="mt-5">Live Streaming</h3>
-            <img src="{{ url_for('video_feed') }}" width="100%">
-        </div>
-    </body>
+  </head>
+  <body>
+    <navbar>
+      <ul id="logo-menu">
+        <li id="moveio">Move.io</li>
+      </ul>
+      <ul id="menu-items">
+        <li>Challenges</li>
+        <li>Classes</li>
+        <li>Leaderboard</li>
+        <li>Login</li>
+      </ul>
+    </navbar>
+    <section id="hero">
+      <div class="col-lg-8 offset-lg-2">
+        <h3 class="mt-5">Live Streaming</h3>
+        <img src="{{ url_for('video_feed') }}" width="100%" />
+      </div>
+
+      <div id="demonstration"></div>
+    </section>
+
+    <section id="lesson"></section>
+
+    <section id="about"></section>
+  </body>
 </html>

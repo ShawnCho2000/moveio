@@ -1,0 +1,108 @@
+html {
+  font-size: 8px;
+  margin: 0px;
+}
+
+@media only screen and (min-width: 150px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+navbar {
+  display: flex;
+  align-items: center;
+  background-color: #080a0c;
+  opacity: 0.9;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  position: fixed; /* Set the navbar to fixed position */
+  width: 100%; /* Full width */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#moveio {
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  margin: 0px;
+  font-family: "Questrial", sans-serif;
+}
+
+#hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 500px;
+  padding: 200px 0 50px 0;
+}
+
+li {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+li a:hover {
+  background-color: rgb(36, 36, 36);
+  color: white;
+}
+
+navbar li {
+  float: left;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+#menu-items {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  color: black;
+  padding-right: 24px;
+}
+
+#hero {
+  display: flex;
+  justify-content: center;
+}
+
+#demonstration {
+  background-image: url(../images/pushup.gif);
+  height: 16rem;
+  width: 28rem;
+}
+
+#hidden {
+  display: none;
+}
