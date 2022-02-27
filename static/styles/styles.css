@@ -177,50 +177,6 @@ ul {
   height: 100%;
 }
 
-.card {
-  width: 25%;
-  height: 30%; /* Set width of cards */
-  border: 1px solid #ef9a9a; /* Set up Border */
-  border-radius: 4px; /* Slightly Curve edges */
-  overflow: hidden; /* Fixes the corners */
-  display: flex; /* Children use Flexbox */
-  flex-direction: column; /* Rotate Axis */
-}
-
-.card-header {
-  color: #d32f2f;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  border-bottom: 1px solid #ef9a9a;
-  background-color: #ffebee;
-  padding: 5px 10px;
-}
-
-.card-main {
-  display: flex; /* Children use Flexbox */
-  flex-direction: column; /* Rotate Axis to Vertical */
-  justify-content: center; /* Group Children in Center */
-  align-items: center; /* Group Children in Center (+axis) */
-  padding: 15px 0; /* Add padding to the top/bottom */
-}
-
-#podium_area {
-  width: 80%;
-  flex-direction: column;
-}
-.podium {
-  width: 80%;
-  height: 30%; /* Set width of cards */
-  border: 1px solid #ef9a9a; /* Set up Border */
-  border-radius: 4px; /* Slightly Curve edges */
-  overflow: hidden; /* Fixes the corners */
-  display: flex; /* Children use Flexbox */
-  flex-direction: row; /* Rotate Axis */
-  background-color: #021d35;
-  justify-content: space-evenly;
-}
-
 .class-desc {
   font-size: 0.75em;
   padding: 1em;
@@ -353,4 +309,70 @@ ul {
   width: 600px;
   min-height: -webkit-fill-available;
   border-radius: 1em;
+}
+
+#bronze {
+  background-image: url("../images/bronze.png");
+  height: 30vh;
+}
+
+#silver {
+  background-image: url("../images/silver.png");
+  height: 40vh;
+}
+
+#gold {
+  background-image: url("../images/gold.png");
+  height: 50vh;
+}
+
+.podium {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 15vw;
+}
+
+#podium_area {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  align-self: center;
+  width: 80vw;
+  padding-top: 430px;
+  padding-bottom: 60px;
+}
+
+#bronze,
+#silver,
+#gold {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+#chart_ranking {
+  display: flex;
+  flex-direction: column;
+}
+
+.ranking {
+  display: flex;
+  justify-content: space-between;
+  border: solid 2px #536c92;
+  width: 50vw;
+  height: 7vh;
+  border-radius: 15px;
+  padding: 0 2em 0 2em;
+  margin-bottom: 0.5em;
+}
+
+#leaderboard {
+  display: flex;
+  flex-direction: column;
+}
+
+#chart_ranking {
+  align-items: center;
 }
