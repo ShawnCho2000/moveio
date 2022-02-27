@@ -71,14 +71,9 @@
         toggleViewOn(e, navbarLinks)
       );
     }
-<<<<<<< HEAD
     id('moveio').addEventListener('click', toggleHomeView);
     id('challenge_btn').addEventListener('click', loadChallenge);
     id('leaderboard_btn').addEventListener('click', leaderboardBuild);
-=======
-    id("moveio").addEventListener("click", toggleHomeView);
-    id("challenge_btn").addEventListener("click", loadChallenge);
->>>>>>> 108262b246e1980e7a5c7dd865b459755690f7b5
   }
 
   function loadPages() {
@@ -95,6 +90,7 @@
       pages[i].classList.add("hidden");
     }
     var element = id(thisid);
+    console.log(thisid);
     element.classList.remove("hidden");
   }
 
@@ -208,6 +204,7 @@
     return document.getElementById(idName);
   }
 
+<<<<<<< HEAD
   /**
    * shortcut function to select object using selector and make object
    * @param {String} selector - identifier of element we want to select
@@ -215,6 +212,17 @@
    */
   function qs(selector) {
     return document.querySelector(selector);
+=======
+  const pushupJs = {
+    "name": "pushup",
+    "desc": "A conditioning exercise performed in a prone position",
+    "picture": "https://media.istockphoto.com/photos/beautiful-young-sports-lady-doing-push-ups-while-workout-at-home-picture-id1254996126?k=20&m=1254996126&s=612x612&w=0&h=rsKgWYDbSHmyNJ5h40FNtsMVOV-J9AWp8YzuTt-Y2X8=",
+    "video": "pushup.gif",
+    "ins": ["1. Contract your abs and tighten your core by pulling your belly button toward your spine.",
+          "2. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle.",
+          "3. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position."
+        ]
+>>>>>>> woo
   }
 
   /**
@@ -226,6 +234,7 @@
     return document.querySelectorAll(selector);
   }
 
+<<<<<<< HEAD
   /**
    * shortcut function to create object using element type
    * @param {String} elType - element of what we want to create
@@ -260,6 +269,35 @@
       "3. Press your heels into the floor to return to the initial position.",
     ],
   };
+=======
+  const yogaJs = {
+    "name": "yoga",
+    "desc": "Various styles of yoga combine physical postures, breathing techniques, and meditation or relaxation",
+    "picture": "https://www.goodnet.org/photos/281x197/34271_hd.jpg",
+    "video":"yoga.gif",
+    "ins": ["1. Stand up with your feet, a little wider than shoulder width.",
+            "2. Lift arms from your shoulder until they are parallel to the ground",
+            "3. Hold for 10 seconds."
+          ]
+
+        
+  }
+
+  const curlJs = {
+    "name": "curl",
+    "desc": "Bicep curls help develop beautiful arms, which can translate into a great physique.",
+    "picture": "https://438p81ekhtervo423d6400fn-wpengine.netdna-ssl.com/wp-content/uploads/2021/02/Bicep-Curls.jpg",
+    "video":"curl.gif",
+    "ins": ["1. Stand up with your feet, a little wider than shoulder width.",
+            "2. Lift arms from your shoulder until they are parallel to the ground",
+            "3. Hold for 10 seconds."
+          ]
+
+        
+  }
+
+  const exercises = [pushupJs, squatJs, yogaJs, curlJs, pushupJs, squatJs, yogaJs, curlJs]
+>>>>>>> woo
 
   const yogaJs = {
     name: "yoga",
