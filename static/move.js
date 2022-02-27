@@ -90,17 +90,41 @@
       let vid = exs.video;
       
       let card = gen('div');
-      let img = gen('img');
+      let cardImg = gen('div');
+      
+      let cardDesc = gen('div');
+      card.classList.add('class-card');
+      cardImg.classList.add('class-img');
+      cardDesc.classList.add('class-desc')
       let cardId = name;
-      img.src = pic;
-      img.alt = 'This exercise is ' + cardId;
-      let title = gen('p');
+      toImage(cardImg, pic)
+      let title = gen('h1');
+      let duration = gen('h4');
+      let description = gen('h4');
       title.textContent = name;
       card.id = cardId;
-      card.appendChild(img);
-      card.appendChild(title);
-      id('classes').appendChild(card);
+     //  duration.textContent = 
+      description.textContent = desc
+      card.appendChild(cardImg);
+      cardDesc.appendChild(title)
+     // cardDesc.appendChild(duration);
+      cardDesc.appendChild(description);
+      card.appendChild(cardDesc);
+      card.addEventListener('mouseover', (e) => addGIFClass(e, cardId, cardImg))
+      card.addEventListener('mouseout', (e) => toImage(cardImg, pic))
+      id('classes').appendChild(card, cardId);
     }
+  }
+
+  function addGIFClass(e, cardId, cardImg) {
+      console.log('change to gif');
+      let urlPath = '../static/images/' + cardId + '.gif';
+      console.log(urlPath);
+      cardImg.style.backgroundImage = 'url(' + urlPath + ')';
+  }
+
+  function toImage(cardImg, pic) {
+    cardImg.style.backgroundImage = 'url(' + pic + ')';
   }
   
 
@@ -133,7 +157,7 @@
     "name": "squat",
     "desc": "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
     "picture": "https://experiencelife.lifetime.life/wp-content/uploads/2021/03/Pull-Ups-1280x720.jpg",
-    "video": "pullup.gif",
+    "video": "squat.gif",
     "ins": ["1. Stand up with your feet shoulder-width apart.",
           "2. Bend your knees, press your hips back and stop the movement once the hip joint is slightly lower than the knees.",
           "3. Press your heels into the floor to return to the initial position."
