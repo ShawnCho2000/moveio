@@ -86,3 +86,7 @@ ul {
   flex-wrap: wrap;
   color: black;
 }
+
+#hidden {
+  display: none;
+}
