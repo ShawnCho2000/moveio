@@ -274,5 +274,8 @@ ul {
 .offset-lg-2 {
   align-self: center;
   text-align: center;
-  color: #5391ee;
+}
+
+#challenge_window {
+  border: solid 3px #5391ee;
 }

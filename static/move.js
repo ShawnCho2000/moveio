@@ -11,6 +11,13 @@
     loadPages();
     enableOnScreenButtons();
     handleGraph();
+    getStartedButton();
+  }
+
+  function getStartedButton() {
+      let startbtn = id('start');
+      let navbarLinks = qsa("#menu-items li");
+      startbtn.addEventListener('click', (e) => toggleViewOn(e, navbar))
   }
 
   function handleGraph() {
@@ -268,5 +275,17 @@
     ],
   };
 
-  const exercises = [pushupJs, squatJs, yogaJs];
+  const curlJs = {
+    name: "curl",
+    desc: "Bicep curls help develop beautiful arms, which can translate into a great physique.",
+    picture: "https://438p81ekhtervo423d6400fn-wpengine.netdna-ssl.com/wp-content/uploads/2021/02/Bicep-Curls.jpg",
+    video: "curl.gif",
+    ins: [
+      "1. Stand up with your feet, a little wider than shoulder width.",
+      "2. Lift arms from your shoulder until they are parallel to the ground",
+      "3. Hold for 10 seconds.",
+    ],
+  };
+
+  const exercises = [pushupJs, squatJs, yogaJs, curlJs, pushupJs, squatJs, yogaJs, curlJs];
 })();
