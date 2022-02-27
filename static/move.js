@@ -7,7 +7,8 @@
    * when the page loads
    */
   function init() {
-    
+    console.log("asd")
+    enableOnScreenButtons();
   }
 
 /**
@@ -47,10 +48,18 @@
   }
 
 
-  function toggleview() {
-    buttonText = qs()
-    id(buttonText).classList.remove('hidden')
-    id(buttonText).classList.add('hidden')
+  function enableOnScreenButtons() {
+    // id('moveio').addEventListener('click', toggleHomeView)
+    let navbarLinks = qsa("#menu-items li");
+    console.log(navbarLinks);
+    for (let i = 0; i < navbarLinks.length; i++) {
+      navbarLinks[i].addEventListener('click', toggleViewOn);
+    }
+  }
+
+  function toggleViewOn() {
+    // this.
+    console.log(this.textContent);
   }
 
 })();
