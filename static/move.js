@@ -8,6 +8,7 @@
    */
   function init() {
     toggleHomeView();
+    loadPages();
     enableOnScreenButtons();
   }
 
@@ -50,11 +51,14 @@
 
   function enableOnScreenButtons() {
     let navbarLinks = qsa("#menu-items li");
-    console.log(navbarLinks);
     for (let i = 0; i < navbarLinks.length; i++) {
       navbarLinks[i].addEventListener('click', (e) => toggleViewOn(e, navbarLinks));
     }
     id('moveio').addEventListener('click', toggleHomeView);
+  }
+
+  function loadPages() {
+    loadClasses();
   }
 
   function toggleViewOn(e, navbarLinks) {
@@ -72,6 +76,70 @@
     for (let i = 0; i < pages.length; i++) {
       pages[i].classList.add("hidden");
     }
+    var home = id('hero');
+    home.classList.remove("hidden");
   }
+
+  function loadClasses() {
+    for (let i = 0; i < exercises.length; i++) {
+      console.log(exercises[i]);
+      let exs = exercises[i];
+      let name = exs.name;
+      let desc = exs.desc;
+      let pic = exs.picture;
+      let vid = exs.video;
+      
+      let card = gen('div');
+      let img = gen('img');
+      let cardId = name;
+      img.src = pic;
+      img.alt = 'This exercise is ' + cardId;
+      let title = gen('p');
+      title.textContent = name;
+      card.id = cardId;
+      card.appendChild(img);
+      card.appendChild(title);
+      id('classes').appendChild(card);
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  const pushupJs = {
+    "name": "pushup",
+    "desc": "A conditioning exercise performed in a prone position by raising and lowering the body with the straightening and bending of the arms while keeping the back straight and supporting the body on the hands and toes",
+    "picture": "https://media.istockphoto.com/photos/beautiful-young-sports-lady-doing-push-ups-while-workout-at-home-picture-id1254996126?k=20&m=1254996126&s=612x612&w=0&h=rsKgWYDbSHmyNJ5h40FNtsMVOV-J9AWp8YzuTt-Y2X8=",
+    "video": "pushup.gif",
+    "ins": ["1. Contract your abs and tighten your core by pulling your belly button toward your spine.", 
+          "2. Inhale as you slowly bend your elbows and lower yourself to the floor, until your elbows are at a 90-degree angle.", 
+          "3. Exhale while contracting your chest muscles and pushing back up through your hands, returning to the start position."
+        ]
+  }
+
+  const squatJs = {
+    "name": "squat",
+    "desc": "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+    "picture": "https://experiencelife.lifetime.life/wp-content/uploads/2021/03/Pull-Ups-1280x720.jpg",
+    "video": "pullup.gif",
+    "ins": ["1. Stand up with your feet shoulder-width apart.",
+          "2. Bend your knees, press your hips back and stop the movement once the hip joint is slightly lower than the knees.",
+          "3. Press your heels into the floor to return to the initial position."
+        ]
+  }
+
+  const exercises = [pushupJs, squatJs]
 
 })();
