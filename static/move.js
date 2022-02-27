@@ -68,7 +68,7 @@
   }
 
   function toggleHomeView() {
-    let pages = qsa(".pages")
+    let pages = qsa(".pages");
     for (let i = 0; i < pages.length; i++) {
       pages[i].classList.add("hidden");
     }
