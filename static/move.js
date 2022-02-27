@@ -59,6 +59,7 @@
 
   function loadPages() {
     loadClasses();
+    loadChallenge();
   }
 
   function toggleViewOn(e, navbarLinks) {
@@ -103,6 +104,12 @@
       card.appendChild(title);
       id('classes').appendChild(card);
     }
+  }
+/**
+ * Shawn will add the opencv app
+ */
+  function loadChallenge() {
+
   }
   
 
