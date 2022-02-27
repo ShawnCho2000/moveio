@@ -44,6 +44,10 @@ def about():
 def video_feed():
     return Response(generate_frames2(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route('/video_feed2')
+def video_feed2():
+    return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
 @app.route('/score')
 def score():
     return str(i)
@@ -107,7 +111,7 @@ def generate_frames2():
                     img.flags.writeable = False
                     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                     xy = results.pose_landmarks.landmark
-                    if time.perf_counter() - timeStart > 20:
+                    if time.perf_counter() - timeStart > 200:
                         cv2.putText(img, f'Times up! Good job! You completed {i} pushups', (50, 50), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
 
                         img.flags.writeable = True
