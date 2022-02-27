@@ -218,7 +218,7 @@ function gen(elType) {
 
   const pushupJs = {
     "name": "pushup",
-    "desc": "A conditioning exercise performed in a prone position by raising and lowering the body with the straightening and bending of the arms while keeping the back straight and supporting the body on the hands and toes",
+    "desc": "A conditioning exercise performed in a prone position",
     "picture": "https://media.istockphoto.com/photos/beautiful-young-sports-lady-doing-push-ups-while-workout-at-home-picture-id1254996126?k=20&m=1254996126&s=612x612&w=0&h=rsKgWYDbSHmyNJ5h40FNtsMVOV-J9AWp8YzuTt-Y2X8=",
     "video": "pushup.gif",
     "ins": ["1. Contract your abs and tighten your core by pulling your belly button toward your spine.",
@@ -247,8 +247,23 @@ function gen(elType) {
             "2. Lift arms from your shoulder until they are parallel to the ground",
             "3. Hold for 10 seconds."
           ]
+
+        
   }
 
-  const exercises = [pushupJs, squatJs, yogaJs]
+  const curlJs = {
+    "name": "curl",
+    "desc": "Bicep curls help develop beautiful arms, which can translate into a great physique.",
+    "picture": "https://438p81ekhtervo423d6400fn-wpengine.netdna-ssl.com/wp-content/uploads/2021/02/Bicep-Curls.jpg",
+    "video":"curl.gif",
+    "ins": ["1. Stand up with your feet, a little wider than shoulder width.",
+            "2. Lift arms from your shoulder until they are parallel to the ground",
+            "3. Hold for 10 seconds."
+          ]
+
+        
+  }
+
+  const exercises = [pushupJs, squatJs, yogaJs, curlJs, pushupJs, squatJs, yogaJs, curlJs]
 
 })();
