@@ -124,6 +124,10 @@
       let description = gen("h4");
       title.textContent = name;
       card.id = cardId;
+      //adding squat exec code
+      if(name=="squat") {
+        card.addEventListener('click', loadSquats);
+      }
       //  duration.textContent =
       description.textContent = desc;
       card.appendChild(cardImg);
@@ -171,6 +175,40 @@
     let img = id("challenge_window");
     img.src = "https://acegif.com/wp-content/uploads/loading-36.gif";
     setTimeout(() => {img.src="/video_feed"}, 1000);
+  }
+
+  function loadSquats() {
+    id('inst2').innerHTML="";
+    id('classes').classList.add("hidden");
+    let instructions = gen('div');
+    let header = gen('h1');
+    let inst_pic = gen('div');
+    let description = gen('h4');
+    let ready_btn = gen('p');
+
+    instructions.classList.add("instruction");
+    inst_pic.classList.add("inst-image");
+    description.classList.add("challenge-desc")
+    description.textContent = "Please place you laptop down on the ground, having the web cam around eye level. When ready and in a tall plank, go ahead and click ready and the timer will start!"
+    ready_btn.id = "ready-btn";
+    ready_btn.textContent = "Ready!";
+    header.textContent = "Welcome to your squats lesson!";
+
+    instructions.appendChild(header);
+    instructions.appendChild(inst_pic);
+    instructions.appendChild(description);
+    instructions.appendChild(ready_btn);
+    id("inst2").appendChild(instructions);
+    
+    ready_btn.addEventListener('click', playSquat);
+  }
+
+  function playSquat() {
+    id('squats_box').classList.remove("hidden");
+    id('inst2').innerHTML="";
+    let img = id("squats_window");
+    img.src = "https://acegif.com/wp-content/uploads/loading-36.gif";
+    setTimeout(() => {img.src="/video_feed3"}, 1000);
   }
 
   function addGIFClass(e, cardId, cardImg) {

@@ -335,7 +335,7 @@ def generate_frames3():
                                 cv2.putText(img, f'Go lower!', (100, 100), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
                                 counter = 0
                             else:
-                                cv2.putText(img, f'You are at {i} pushups', (100, 100), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
+                                cv2.putText(img, f'You are at {i} squats', (100, 100), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
                                 if counter == 3:
                                     i += 1
                                     counter = -1
