@@ -7,7 +7,7 @@
    * when the page loads
    */
   function init() {
-    
+    enableOnScreenButtons();
   }
 
 /**
@@ -47,10 +47,16 @@
   }
 
 
-  function toggleview() {
-    buttonText = qs()
-    id(buttonText).classList.remove('hidden')
-    id(buttonText).classList.add('hidden')
+  function enableOnScreenButtons() {
+    id('moveio').addEventListener('Click', toggleHomeView())
+    navbarLinks = qsa("#menu-items li")
+    for (let i = 0; i < navbarLinks.length; i++) {
+      navbarLinks[i].addEventListener('Click', toggleViewOn);
+    }
+  }
+
+  function toggleViewOn() {
+    this.
   }
 
 })();
