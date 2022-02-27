@@ -24,6 +24,7 @@
   function loadPages() {
     loadClasses();
     loadChallenge();
+    leaderboardBuild();
   }
 
   function toggleViewOn(e, navbarLinks) {
@@ -47,7 +48,6 @@
 
   function loadClasses() {
     for (let i = 0; i < exercises.length; i++) {
-      console.log(exercises[i]);
       let exs = exercises[i];
       let name = exs.name;
       let desc = exs.desc;
@@ -78,12 +78,36 @@
   
   function leaderboardBuild() {
     fetch("/leaderboard")
+      .then(res => res.json())
       .then(res => {
-        res.json();
+        res = res.data;
+        for (let i = 0; i < res.length; i++) {
+          let ident = res[i][0];
+          let count = res[i][1][0];
+          let angle = res[i][1][1];
+          let place = i + 1;
+
+          let podium = gen('div');
+          podium.id = place + "_place";
+          podium.classList.add("podium");
+          let rank = gen('p');
+          rank.classList.add('rank');
+          rank.textContent = place;
+          let name_card = gen('p');
+          name_card.classList.add("name_card");
+          name_card.textContent = ident;
+          let score = gen('p');
+          score.classList.add('score');
+          score.textContent = count;
+
+          podium.appendChild(rank);
+          podium.appendChild(name_card);
+          podium.appendChild(score);
+          id("podium_area").appendChild(podium);
+        }
       })
-      .then(console.log)
       .catch(error => {
-        console.log(res.status);
+        console.log(error);
       })
   }
 
