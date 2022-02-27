@@ -5,13 +5,13 @@ html {
 
 @media only screen and (min-width: 150px) {
   html {
-    font-size: 10px;
+    font-size: 6px;
   }
 }
 
 @media only screen and (min-width: 480px) {
   html {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -27,17 +27,23 @@ html {
   }
 }
 
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 21px;
+  }
+}
+
 navbar {
   display: flex;
   align-items: center;
-  background-color: #080a0c;
+  background-color: #021d35;
   opacity: 0.9;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
+  font-size: 0.7rem;
   position: fixed; /* Set the navbar to fixed position */
   width: 100%; /* Full width */
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 #moveio {
@@ -49,14 +55,30 @@ navbar {
 body {
   margin: 0px;
   font-family: "Questrial", sans-serif;
+  background-color: #021d35;
+  color: white;
 }
 
 #hero {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  height: 500px;
+
+  height: 50vh;
   padding: 200px 0 50px 0;
+}
+
+#description {
+  padding: 10vh 0 10vh 0;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#description h1 {
+  font-size: 1.7rem;
+  color: #5391ee;
 }
 
 li {
@@ -65,12 +87,15 @@ li {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
 }
 
-li a:hover {
-  background-color: rgb(36, 36, 36);
+navbar li:hover {
+  background-color: #2f3e4b;
   color: white;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 navbar li {
@@ -89,18 +114,44 @@ ul {
   justify-content: flex-end;
   flex-wrap: wrap;
   color: black;
-  padding-right: 24px;
-}
-
-#hero {
-  display: flex;
-  justify-content: center;
+  padding-right: 50px;
 }
 
 #demonstration {
   background-image: url(../images/pushup.gif);
-  height: 16rem;
-  width: 28rem;
+  height: 15rem;
+  width: 30rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#demonstration2 {
+  background-image: url(../images/pullup.gif);
+  height: 15rem;
+  width: 30rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 40rem;
+  bottom: 13rem;
+}
+
+#start {
+  background-color: #5391ee;
+  color: white;
+  border-style: none;
+  width: 100%;
+  border-radius: 1rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  transition: all 0.2s ease-in-out;
+}
+
+#start:hover {
+  transform: scale(1.3);
+  cursor: pointer;
 }
 
 #hidden {
