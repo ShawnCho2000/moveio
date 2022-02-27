@@ -52,6 +52,7 @@
     }
     id('moveio').addEventListener('click', toggleHomeView);
     id('challenge_btn').addEventListener('click', loadChallenge);
+    id('leaderboard_btn').addEventListener('click', leaderboardBuild);
   }
 
   function loadPages() {
@@ -133,6 +134,7 @@
   }
 
   function leaderboardBuild() {
+    id('podium_area').innerHTML="";
     fetch("/leaderboard")
       .then(res => res.json())
       .then(res => {
