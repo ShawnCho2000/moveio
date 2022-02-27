@@ -209,6 +209,7 @@
   function loadSquats() {
     id('inst2').innerHTML="";
     id('classes').classList.add("hidden");
+    id("squats").classList.remove("hidden");
     let instructions = gen('div');
     let header = gen('h1');
     let inst_pic = gen('div');

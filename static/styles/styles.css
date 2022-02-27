@@ -170,6 +170,11 @@ ul {
   display: none !important;
 }
 
+#squats_box {
+  width: auto;
+  height: auto;
+}
+
 .pages {
   width: 100%;
   display: flex;
@@ -240,6 +245,7 @@ ul {
 }
 
 #squats {
+  /* padding-top: 100px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,13 +263,15 @@ ul {
 }
 
 #squats_window {
-  width: "1286px";
-  height: "723.375px";
+  /* width: "1286px" !important;
+  height: "723.375px" !important; */
+  margin-top: 220px;
 }
 
 #challenge_window,
 #squats_window {
   border: solid 3px #5391ee;
+  max-width: 1286px;
 }
 
 #inst,
