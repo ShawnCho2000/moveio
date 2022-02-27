@@ -102,3 +102,7 @@ ul {
   height: 16rem;
   width: 28rem;
 }
+
+#hidden {
+  display: none;
+}
