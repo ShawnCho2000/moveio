@@ -174,8 +174,6 @@ ul {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: #ffffff;
-
   height: 100%;
   padding: 200px 0 50px 0;
 }
