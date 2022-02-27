@@ -12,49 +12,13 @@
     enableOnScreenButtons();
   }
 
-/**
-   * shortcut function to select object using ID and make object
-   * @param {String} idName - id of wlement we want to select
-   * @returns {Object} Returns object that was identified by ID
-   */
-   function id(idName) {
-    return document.getElementById(idName);
-  }
-
-  /**
-   * shortcut function to select object using selector and make object
-   * @param {String} selector - identifier of element we want to select
-   * @returns {Object} Returns object that was identified by selctor
-   */
-  function qs(selector) {
-    return document.querySelector(selector);
-  }
-
-  /**
-   * shortcut function to create node list of objects using identifiers
-   * @param {String} selector - identifier of element we want to create list of
-   * @returns {Object} Returns node list that was identified by selector
-   */
-  function qsa(selector) {
-    return document.querySelectorAll(selector);
-  }
-
-  /**
-   * shortcut function to create object using element type
-   * @param {String} elType - element of what we want to create
-   * @returns {Object} Returns object that was created by element specified
-   */
-  function gen(elType) {
-    return document.createElement(elType);
-  }
-
-
   function enableOnScreenButtons() {
     let navbarLinks = qsa("#menu-items li");
     for (let i = 0; i < navbarLinks.length; i++) {
       navbarLinks[i].addEventListener('click', (e) => toggleViewOn(e, navbarLinks));
     }
     id('moveio').addEventListener('click', toggleHomeView);
+    id('challenge_btn').addEventListener('click', loadChallenge);
   }
 
   function loadPages() {
@@ -105,11 +69,11 @@
       id('classes').appendChild(card);
     }
   }
-/**
- * Shawn will add the opencv app
- */
-  function loadChallenge() {
 
+  function loadChallenge() {
+    let img = id("challenge_window");
+    img.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAbFBMVEX////Q0NDMzMzp6enR0dGcnJwAAACgoKD29vbx8fHKysr7+/vs7Ozb29u2trbv7+/Y2Njh4eFubm5EREQ1NTVpaWktLS1lZWW/v79zc3N6enpOTk48PDytra2SkpKHh4dcXFxKSkogICANDQ0sfVPvAAADF0lEQVR4nO3ZiXLaMBCAYdsSxQIMFmBMIJDr/d+xK1kYpjidhGnHUvt/CTlIMqNltasjWQYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf5fa79XYY/gjlpPJshx7EH/AYjqZTBbhGzMfdSyPsJXtBq0kkGmYW6fzKbXcLIq8sP4rdc3Isl0/zcYc1QMkkDz3r/41I3bdrJ/2447r+/QlJbYP5Nw07WHx+z+Lj3IpcaMOU2ue5U3btMuxx/V9tURSZzdT66Vtmpf0ula2kkAKdQ1kL3Gs9dij+gZzabBWqkSXl0DUoV23k/AjXazGGt6X2UrbLhQlccxsGQKZttKzQkM+bI5nE/uCot2MCgOWctflXJWlzRaSkObkn51sdtvnYz3qKL/A1XhR+H4lQdm+uNW0Obj5dDrudtvt82v0+0jjUuIeMndW5vYnusiyYr1zceyOKSzwtgtF27tWaw8bF8Vuc44+Hx3rA8nv6jnf7iSM7SH6+ugZVykDm5GphPGa1m5LOtbAs+a4mZossdXdDj25vC+cVJmV8cq4F0Q5F1adwYRk5m0TvK3ziEOp/GooeyzZnQzOocX7j17Ma2LtIpi5OPJPWuzzJYyPjzcbb0oqWQtnwWBGzEefkPdzvHEIV8Yr496Gu+yyV/wz/SsR9WDbcs1s3r2nkRBTz4a6q5FekNQ1ij+UDOxRfHuOuFn9wu/jh157E5rzIolQXBiFPCpzXwZGh1CG1/2oSHH4wbpjra5uq7qq5IOqu2x1RR8zt6iHyaPqm1kkierugJT/DV1GHodkRCZON3r/4ksIovR3waH8fSjRl8nK2nDEVTLJcpNlsonMZdPujr9hm6isiv5a64afQvJZu9st33o/2RJHzl4GrrtreeVvJMYe1QP6qVR3GfFTTSc0owLVVXrmA+luVNyJqxp1UA+QpS8vuqXdnVF8Itz/FdPaamW+Qi6HxD4Q348jPt8Oku1vEc5Wui8NWSHrlPquZ/o5dM2IJGpgA5aMOv/sJiIxql/RU5fUfgQAAAAAAAAAAAAAAAAAAAAAAAAAAAD43/wEfmYcGzg+iAIAAAAASUVORK5CYII=";
+    setTimeout(() => {img.src="/video_feed"}, 50)
   }
   
 
@@ -125,6 +89,41 @@
 
 
 
+/**
+   * shortcut function to select object using ID and make object
+   * @param {String} idName - id of wlement we want to select
+   * @returns {Object} Returns object that was identified by ID
+   */
+ function id(idName) {
+  return document.getElementById(idName);
+}
+
+/**
+ * shortcut function to select object using selector and make object
+ * @param {String} selector - identifier of element we want to select
+ * @returns {Object} Returns object that was identified by selctor
+ */
+function qs(selector) {
+  return document.querySelector(selector);
+}
+
+/**
+ * shortcut function to create node list of objects using identifiers
+ * @param {String} selector - identifier of element we want to create list of
+ * @returns {Object} Returns node list that was identified by selector
+ */
+function qsa(selector) {
+  return document.querySelectorAll(selector);
+}
+
+/**
+ * shortcut function to create object using element type
+ * @param {String} elType - element of what we want to create
+ * @returns {Object} Returns object that was created by element specified
+ */
+function gen(elType) {
+  return document.createElement(elType);
+}
   
 
   const pushupJs = {
