@@ -23,7 +23,7 @@
         <li id="challenge_btn">Challenges</li>
         <li id="classes_btn">Classes</li>
         <li id="leaderboard_btn">Leaderboard</li>
-        <li id="login_btn">Login</li>
+        <li id="account_btn">Account</li>
       </ul>
     </navbar>
     <section id="hero" class="pages">
@@ -51,14 +51,18 @@
     </section>
 
     <section id="challenges" class="pages hidden">
-        <div>Hello this is challenges</div>
+        <div class="col-lg-8 offset-lg-2">
+        <h3 class="mt-5">Live Streaming</h3>
+        <img id="challenge_window" src="{{ url_for('video_feed') }}" width="100%" />
+      </div>
+
     </section>
     <section id="classes" class="pages hidden"> </section>
     <section id="leaderboard" class="pages hidden">
         <div>hello this is leaderboard</div>
     </section>
-    <section id="login" class="pages hidden">
-        <div>hello this is login</div>
+    <section id="account" class="pages hidden">
+        <div>hello this is account</div>
     </section>
   </body>
 </html>
