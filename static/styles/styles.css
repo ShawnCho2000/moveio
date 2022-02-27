@@ -340,6 +340,16 @@ ul {
   border-radius: 1em;
 }
 
+.inst2-image {
+  background-image: url("https://cdn.mos.cms.futurecdn.net/e3hD68DPnPUzWoTJpaJ6ye-1200-80.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: -webkit-fill-available;
+  border-radius: 1em;
+}
+
 #bronze {
   background-image: url("../images/bronze.png");
   height: 30vh;

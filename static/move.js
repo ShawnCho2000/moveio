@@ -216,7 +216,7 @@
     let ready_btn = gen('p');
 
     instructions.classList.add("instruction");
-    inst_pic.classList.add("inst-image");
+    inst_pic.classList.add("inst2-image");
     description.classList.add("challenge-desc")
     description.textContent = "Please place you laptop down on the ground, having the web cam around eye level. When ready and in a tall plank, go ahead and click ready and the timer will start!"
     ready_btn.id = "ready-btn";
