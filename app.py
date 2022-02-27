@@ -156,7 +156,7 @@ def generate_frames2():
                         cv2.putText(img, f'Standard deviation of arm angle at down position: {round(np.std(angle), 2)}', (50, 250), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
                         cv2.putText(img, f'You averaged {i / 20} pushups per second', (50, 350), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
 
-                        if not done:
+                        if not done and i > 0:
                             if data["Shawn"][0] < i:
                                 data["Shawn"] = ([i, round(np.average(angle), 2)])
                             print(data)
