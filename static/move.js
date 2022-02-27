@@ -202,7 +202,7 @@
     id('challenge_box').classList.remove("hidden");
     id('inst').innerHTML="";
     let img = id("challenge_window");
-    img.src = "https://acegif.com/wp-content/uploads/loading-36.gif";
+    img.src = "https://acegif.com/wp-content/uploads/loading-37.gif";
     setTimeout(() => {img.src="/video_feed"}, 1000);
   }
 
@@ -236,7 +236,7 @@
     id('squats_box').classList.remove("hidden");
     id('inst2').innerHTML="";
     let img = id("squats_window");
-    img.src = "https://acegif.com/wp-content/uploads/loading-36.gif";
+    img.src = "https://acegif.com/wp-content/uploads/loading-37.gif";
     setTimeout(() => {img.src="/video_feed3"}, 1000);
   }
 
