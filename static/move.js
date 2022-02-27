@@ -71,14 +71,9 @@
         toggleViewOn(e, navbarLinks)
       );
     }
-<<<<<<< HEAD
     id('moveio').addEventListener('click', toggleHomeView);
     id('challenge_btn').addEventListener('click', loadChallenge);
     id('leaderboard_btn').addEventListener('click', leaderboardBuild);
-=======
-    id("moveio").addEventListener("click", toggleHomeView);
-    id("challenge_btn").addEventListener("click", loadChallenge);
->>>>>>> 108262b246e1980e7a5c7dd865b459755690f7b5
   }
 
   function loadPages() {
