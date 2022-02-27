@@ -50,16 +50,18 @@
     </section>
 
     <section id="challenges" class="pages hidden">
-      <div class="col-lg-8 offset-lg-2">
+      <div id="challenge_box" class="col-lg-8 offset-lg-2">
         <h1 class="mt-5">Daily Challenge Feb. 27 2022</h1>
         <img
           id="challenge_window"
           class="hero"
-          src="{{ url_for('video_feed') }}"
+          src=""
           width="100%"
         />
       </div>
+      <div id="inst"></div>
     </section>
+
     <section id="classes" class="pages hidden">
       <div id="squat" class="class-card">
         <div class="class-img"></div>
@@ -88,17 +90,7 @@
       <div id="podium_area"></div>
     </section>
     <section id="account" class="pages hidden">
-      <div id="profileCard">
-        <div id="leftCard">
-          <p>Shawn Cho</p>
-          <p>Consequetive logins: 1</p>
-          <p>Longest Streak: 4</p>
-        </div>
-        <div id="rightCard">
-          <p>Your Recent Pushup Numbers</p>
-          <canvas id="myChart"></canvas>
-        </div>
-      </div>
+      <canvas id="myChart"></canvas>
     </section>
     <section id="login" class="pages hidden">
     </section>
