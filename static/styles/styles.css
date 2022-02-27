@@ -249,12 +249,12 @@ ul {
 }
 
 .ans {
-  color: rgb(255, 99, 132)
+  color: rgb(255, 99, 132);
 }
 
 .title {
   font-size: 27;
-  margin-bottom: 0px
+  margin-bottom: 0px;
 }
 
 #classes {
@@ -287,7 +287,10 @@ ul {
 .offset-lg-2 {
   align-self: center;
   text-align: center;
-  color: #5391ee;
+}
+
+#challenge_window {
+  border: solid 3px #5391ee;
 }
 
 #profileCard {
@@ -301,9 +304,9 @@ ul {
 }
 
 #leftCard {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  padding-right: 5%
+  padding-right: 5%;
 }
 
 .instruction {
@@ -317,7 +320,7 @@ ul {
   background-repeat: no-repeat;
   position: absolute;
   left: 20em;
-  top: 20em
+  top: 20em;
 }
 
 .inst {
@@ -332,7 +335,7 @@ ul {
   padding: 14px 16px;
   text-decoration: none;
   border-radius: 30px;
-  transition: all 0.2s ease-in-out
+  transition: all 0.2s ease-in-out;
 }
 
 #ready-btn:hover {

@@ -11,6 +11,13 @@
     loadPages();
     enableOnScreenButtons();
     handleGraph();
+    getStartedButton();
+  }
+
+  function getStartedButton() {
+      let startbtn = id('start');
+      let navbarLinks = qsa("#menu-items li");
+      startbtn.addEventListener('click', (e) => toggleViewOn(e, navbar))
   }
 
   function handleGraph() {
@@ -73,13 +80,13 @@
     }
     id('moveio').addEventListener('click', toggleHomeView);
     id('challenge_btn').addEventListener('click', loadChallenge);
-    id('leaderboard_btn').addEventListener('click', leaderboardBuild);
+    // id('leaderboard_btn').addEventListener('click', leaderboardBuild);
   }
 
   function loadPages() {
     loadClasses();
     loadChallenge();
-    leaderboardBuild();
+    // leaderboardBuild();
   }
 
   function toggleViewOn(e, navbarLinks) {
@@ -222,41 +229,41 @@
     cardImg.style.backgroundImage = "url(" + pic + ")";
   }
 
-  function leaderboardBuild() {
-    id('podium_area').innerHTML="";
-    fetch("/leaderboard")
-      .then((res) => res.json())
-      .then((res) => {
-        res = res.data;
-        for (let i = 0; i < res.length; i++) {
-          let ident = res[i][0];
-          let count = res[i][1][0];
-          let angle = res[i][1][1];
-          let place = i + 1;
+//   function leaderboardBuild() {
+//     id('podium_area').innerHTML="";
+//     fetch("/leaderboard")
+//       .then((res) => res.json())
+//       .then((res) => {
+//         res = res.data;
+//         for (let i = 0; i < res.length; i++) {
+//           let ident = res[i][0];
+//           let count = res[i][1][0];
+//           let angle = res[i][1][1];
+//           let place = i + 1;
 
-          let podium = gen("div");
-          podium.id = place + "_place";
-          podium.classList.add("podium");
-          let rank = gen("p");
-          rank.classList.add("rank");
-          rank.textContent = place;
-          let name_card = gen("p");
-          name_card.classList.add("name_card");
-          name_card.textContent = ident;
-          let score = gen("p");
-          score.classList.add("score");
-          score.textContent = count;
+//           let podium = gen("div");
+//           podium.id = place + "_place";
+//           podium.classList.add("podium");
+//           let rank = gen("p");
+//           rank.classList.add("rank");
+//           rank.textContent = place;
+//           let name_card = gen("p");
+//           name_card.classList.add("name_card");
+//           name_card.textContent = ident;
+//           let score = gen("p");
+//           score.classList.add("score");
+//           score.textContent = count;
 
-          podium.appendChild(rank);
-          podium.appendChild(name_card);
-          podium.appendChild(score);
-          id("podium_area").appendChild(podium);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+//           podium.appendChild(rank);
+//           podium.appendChild(name_card);
+//           podium.appendChild(score);
+//           id("podium_area").appendChild(podium);
+//         }
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   }
 
   /**
    * shortcut function to select object using ID and make object
@@ -332,5 +339,17 @@
     ],
   };
 
-  const exercises = [pushupJs, squatJs, yogaJs];
+  const curlJs = {
+    name: "curl",
+    desc: "Bicep curls help develop beautiful arms, which can translate into a great physique.",
+    picture: "https://438p81ekhtervo423d6400fn-wpengine.netdna-ssl.com/wp-content/uploads/2021/02/Bicep-Curls.jpg",
+    video: "curl.gif",
+    ins: [
+      "1. Stand up with your feet, a little wider than shoulder width.",
+      "2. Lift arms from your shoulder until they are parallel to the ground",
+      "3. Hold for 10 seconds.",
+    ],
+  };
+
+  const exercises = [pushupJs, squatJs, yogaJs, curlJs, pushupJs, squatJs, yogaJs, curlJs];
 })();
