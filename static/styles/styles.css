@@ -276,3 +276,18 @@ ul {
   text-align: center;
   color: #5391ee;
 }
+
+#profileCard {
+  display: flex;
+  padding-top: 100px;
+}
+
+#rightCard {
+  width: 110%;
+}
+
+#leftCard {
+  display:flex;
+  flex-direction: column;
+  padding-right: 5%
+}
