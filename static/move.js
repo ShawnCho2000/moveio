@@ -68,6 +68,7 @@
       pages[i].classList.add("hidden");
     }
     var element = id(thisid);
+    console.log(thisid);
     element.classList.remove("hidden");
   }
 

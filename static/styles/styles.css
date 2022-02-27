@@ -175,7 +175,6 @@ ul {
   display: flex;
   justify-content: space-evenly;
   height: 100%;
-  padding: 200px 0 50px 0;
 }
 
 .card {
@@ -269,4 +268,11 @@ ul {
 
 #squat .class-img {
   background-image: url("https://experiencelife.lifetime.life/wp-content/uploads/2021/03/Pull-Ups-1280x720.jpg");
+}
+
+.col-lg-8,
+.offset-lg-2 {
+  align-self: center;
+  text-align: center;
+  color: #5391ee;
 }
