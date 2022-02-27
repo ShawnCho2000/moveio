@@ -80,13 +80,13 @@
     }
     id('moveio').addEventListener('click', toggleHomeView);
     id('challenge_btn').addEventListener('click', loadChallenge);
-    // id('leaderboard_btn').addEventListener('click', leaderboardBuild);
+    id('leaderboard_btn').addEventListener('click', leaderboardBuild);
   }
 
   function loadPages() {
     loadClasses();
     loadChallenge();
-    // leaderboardBuild();
+    leaderboardBuild();
   }
 
   function toggleViewOn(e, navbarLinks) {
@@ -191,41 +191,49 @@
     cardImg.style.backgroundImage = "url(" + pic + ")";
   }
 
-//   function leaderboardBuild() {
-//     id('podium_area').innerHTML="";
-//     fetch("/leaderboard")
-//       .then((res) => res.json())
-//       .then((res) => {
-//         res = res.data;
-//         for (let i = 0; i < res.length; i++) {
-//           let ident = res[i][0];
-//           let count = res[i][1][0];
-//           let angle = res[i][1][1];
-//           let place = i + 1;
+  function leaderboardBuild() {
+    id('chart_ranking').innerHTML="";
+    fetch("/leaderboard")
+      .then((res) => res.json())
+      .then((res) => {
+        res = res.data;
+        for (let i = 0; i < res.length; i++) {
+          let ident = res[i][0];
+          let count = res[i][1][0];
+          let angle = res[i][1][1];
+          let place = i + 1;
+          if (i === 0) {
+              qs("#gold > h4").textContent = ident;
+              qs("#gold > p").textContent = count + " Points"
+          } else if (i == 1) {
+            qs("#silver > h4").textContent = ident;
+            qs("#silver > p").textContent = count + " Points"
+          } else if (i == 2) {
+            qs("#bronze > h4").textContent = ident;
+            qs("#bronze > p").textContent = count + " Points"
+          } else {
 
-//           let podium = gen("div");
-//           podium.id = place + "_place";
-//           podium.classList.add("podium");
-//           let rank = gen("p");
-//           rank.classList.add("rank");
-//           rank.textContent = place;
-//           let name_card = gen("p");
-//           name_card.classList.add("name_card");
-//           name_card.textContent = ident;
-//           let score = gen("p");
-//           score.classList.add("score");
-//           score.textContent = count;
 
-//           podium.appendChild(rank);
-//           podium.appendChild(name_card);
-//           podium.appendChild(score);
-//           id("podium_area").appendChild(podium);
-//         }
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   }
+            let podium = gen("div");
+            podium.classList.add("ranking");
+            let rank = gen("h4");
+            rank.textContent = place + ".";
+            let name_card = gen("h4");
+            name_card.textContent = ident;
+            let score = gen("h4");
+            score.textContent = count + " points";
+
+            podium.appendChild(rank);
+            podium.appendChild(name_card);
+            podium.appendChild(score);
+            id("chart_ranking").appendChild(podium);
+          }
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   /**
    * shortcut function to select object using ID and make object
