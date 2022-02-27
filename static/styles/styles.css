@@ -239,6 +239,17 @@ ul {
   background-image: url("https://experiencelife.lifetime.life/wp-content/uploads/2021/03/Pull-Ups-1280x720.jpg");
 }
 
+#squats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#challenge {
+  display: flex;
+  justify-content: center;
+}
+
 .col-lg-8,
 .offset-lg-2 {
   align-self: center;
@@ -247,6 +258,16 @@ ul {
 
 #challenge_window {
   border: solid 3px #5391ee;
+}
+
+#inst,
+#inst2 {
+  padding-top: 15em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+  height: 40vh;
 }
 
 #profileCard {
@@ -269,12 +290,11 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 15em;
+  height: 40em;
   width: 30em;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  position: absolute;
   left: 20em;
   top: 20em;
 }
@@ -286,6 +306,7 @@ ul {
 
 #ready-btn {
   display: block;
+  background-color: #5391ee;
   color: white;
   text-align: center;
   padding: 14px 16px;
@@ -295,10 +316,12 @@ ul {
 }
 
 #ready-btn:hover {
-  background-color: #2f3e4b;
-  color: white;
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.instruction h1 {
+  text-align: center;
 }
 
 .inst-image {
@@ -306,7 +329,7 @@ ul {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 600px;
+  width: 100%;
   min-height: -webkit-fill-available;
   border-radius: 1em;
 }

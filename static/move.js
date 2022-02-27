@@ -152,6 +152,7 @@
 
   function loadChallenge() {
     id('inst').innerHTML="";
+    id('inst').classList.remove('hidden');
     id('challenge_box').classList.add("hidden");
     let instructions = gen('div');
     let header = gen('h1');
@@ -161,7 +162,7 @@
 
     instructions.classList.add("instruction");
     inst_pic.classList.add("inst-image");
-    description.classList.add("challenge-desc")
+    description.classList.add("challenge-desc");
     description.textContent = "Please place you laptop down on the ground, having the web cam around eye level. When ready and in a tall plank, go ahead and click ready and the timer will start!"
     ready_btn.id = "ready-btn";
     ready_btn.textContent = "Ready!";
@@ -177,10 +178,11 @@
   }
 
   function playChallenge() {
+    id('inst').classList.add('hidden');
     id('challenge_box').classList.remove("hidden");
     id('inst').innerHTML="";
     let img = id("challenge_window");
-    img.src = "https://acegif.com/wp-content/uploads/loading-37.gif";
+    img.src = "https://acegif.com/wp-content/uploads/loading-36.gif";
     setTimeout(() => {img.src="/video_feed"}, 1000);
   }
 
@@ -214,7 +216,7 @@
     id('squats_box').classList.remove("hidden");
     id('inst2').innerHTML="";
     let img = id("squats_window");
-    img.src = "https://acegif.com/wp-content/uploads/loading-37.gif";
+    img.src = "https://acegif.com/wp-content/uploads/loading-36.gif";
     setTimeout(() => {img.src="/video_feed3"}, 1000);
   }
 
