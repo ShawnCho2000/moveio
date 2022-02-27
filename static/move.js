@@ -90,11 +90,13 @@
       let vid = exs.video;
       
       let card = gen('div');
+      card.classList.add("card");
       let img = gen('img');
       let cardId = name;
       img.src = pic;
       img.alt = 'This exercise is ' + cardId;
       let title = gen('p');
+      title.classList.add("card-header");
       title.textContent = name;
       card.id = cardId;
       card.appendChild(img);
@@ -140,6 +142,17 @@
         ]
   }
 
-  const exercises = [pushupJs, squatJs]
+  const yogaJs = {
+    "name": "yoga",
+    "desc": "Various styles of yoga combine physical postures, breathing techniques, and meditation or relaxation",
+    "picture": "https://www.goodnet.org/photos/281x197/34271_hd.jpg",
+    "video":"yoga.gif",
+    "ins": ["1. Stand up with your feet, a little wider than shoulder width.",
+            "2. Lift arms from your shoulder until they are parallel to the ground",
+            "3. Hold for 10 seconds."
+          ]
+  }
+
+  const exercises = [pushupJs, squatJs, yogaJs]
 
 })();
