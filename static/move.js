@@ -2,6 +2,7 @@
 (function () {
   window.addEventListener("load", init);
 
+  let myChart;
   /**
    * this function will call a function to load the list of books
    * when the page loads
@@ -10,7 +11,7 @@
     toggleHomeView();
     loadPages();
     enableOnScreenButtons();
-    handleGraph();
+    // handleGraph();
     getStartedButton();
   }
 
@@ -21,52 +22,70 @@
   }
 
   function handleGraph() {
+    console.log("test")
     fetch("/profile")
       .then(res => res.json())
       .then(res => {
-        res = res.data;
-        let graphData = []
-        console.log(res)
-        let labels = [];
-        for(let i = 0; i < res.length; i++) {
-          labels.push("");
-          graphData.push(res[i][0])
-        }
+        if (myChart) {
+          res = res.data;
+          let graphData = []
+          console.log(res)
+          let labels = [];
+          for(let i = 0; i < res.length; i++) {
+            labels.push("");
+            graphData.push(res[i][0])
+          }
+          console.log("chart exists")
+          myChart.data.labels = labels;
+          // console.log(myChart.data.datasets[0].data)
+          myChart.data.datasets[0].data = graphData
+          myChart.update()
+        } else {
+          res = res.data;
+          let graphData = []
+          console.log(res)
+          let labels = [];
+          for(let i = 0; i < res.length; i++) {
+            labels.push("");
+            graphData.push(res[i][0])
+          }
 
-        const data = {
-          labels: labels,
-          datasets: [
-            {
-              label: "Pushups in 20 minutes",
-              backgroundColor: "rgb(255, 99, 132)",
-              borderColor: "rgb(255, 99, 132)",
-              data: graphData,
-            },
-          ],
-        };
+          const data = {
+            labels: labels,
+            datasets: [
+              {
+                label: "Pushups in 20 minutes",
+                backgroundColor: "rgb(255, 99, 132)",
+                borderColor: "rgb(255, 99, 132)",
+                data: graphData,
+              },
+            ],
+          };
 
-        const config = {
-          type: "line",
-          data: data,
-          options: {
-            tooltips: {
-              mode: 'index',
-              callbacks: {
-                title: tooltipItem => 'asdfasdfasdf'
+          const config = {
+            type: "line",
+            data: data,
+            options: {
+              tooltips: {
+                mode: 'index',
+                callbacks: {
+                  title: tooltipItem => 'asdfasdfasdf'
+                }
               }
             }
-          }
-        };
-        var options = {
-          tooltips: {
-            callbacks: {
-              label: function (tooltipItem) {
-                return "asdfasdfasfas";
+          };
+          var options = {
+            tooltips: {
+              callbacks: {
+                label: function (tooltipItem) {
+                  return "asdfasdfasfas";
+                },
               },
             },
-          },
-        };
-        const myChart = new Chart(document.getElementById("myChart"), config);
+          };
+          myChart = new Chart(document.getElementById("myChart"), config);
+        }
+
       })
   }
 
@@ -81,6 +100,7 @@
     id('moveio').addEventListener('click', toggleHomeView);
     id('challenge_btn').addEventListener('click', loadChallenge);
     id('leaderboard_btn').addEventListener('click', leaderboardBuild);
+    id('account_btn').addEventListener('click', handleGraph);
   }
 
   function loadPages() {
@@ -172,7 +192,7 @@
     instructions.appendChild(description);
     instructions.appendChild(ready_btn);
     id("inst").appendChild(instructions);
-    
+
     ready_btn.addEventListener('click', playChallenge);
   }
 
@@ -206,7 +226,7 @@
     instructions.appendChild(description);
     instructions.appendChild(ready_btn);
     id("inst2").appendChild(instructions);
-    
+
     ready_btn.addEventListener('click', playSquat);
   }
 
