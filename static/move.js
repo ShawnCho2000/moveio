@@ -7,7 +7,7 @@
    * when the page loads
    */
   function init() {
-    console.log("asd")
+    toggleHomeView();
     enableOnScreenButtons();
   }
 
@@ -49,17 +49,29 @@
 
 
   function enableOnScreenButtons() {
-    // id('moveio').addEventListener('click', toggleHomeView)
     let navbarLinks = qsa("#menu-items li");
     console.log(navbarLinks);
     for (let i = 0; i < navbarLinks.length; i++) {
-      navbarLinks[i].addEventListener('click', toggleViewOn);
+      navbarLinks[i].addEventListener('click', (e) => toggleViewOn(e, navbarLinks));
     }
+    id('moveio').addEventListener('click', toggleHomeView);
   }
 
-  function toggleViewOn() {
-    // this.
-    console.log(this.textContent);
+  function toggleViewOn(e, navbarLinks) {
+    let thisid = e.currentTarget.textContent.toLowerCase();
+    let pages = qsa(".pages");
+    for (let i = 0; i < pages.length; i++) {
+      pages[i].classList.add("hidden");
+    }
+    var element = id(thisid);
+    element.classList.remove("hidden");
+  }
+
+  function toggleHomeView() {
+    let pages = qsa(".pages")
+    for (let i = 0; i < pages.length; i++) {
+      pages[i].classList.add("hidden");
+    }
   }
 
 })();

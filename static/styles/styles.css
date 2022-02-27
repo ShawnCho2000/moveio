@@ -103,6 +103,6 @@ ul {
   width: 28rem;
 }
 
-#hidden {
+.hidden {
   display: none;
 }
