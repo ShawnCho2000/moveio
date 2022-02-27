@@ -147,13 +147,39 @@
   }
 
   function loadChallenge() {
-    let img = id("challenge_window");
-    img.src =
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAbFBMVEX////Q0NDMzMzp6enR0dGcnJwAAACgoKD29vbx8fHKysr7+/vs7Ozb29u2trbv7+/Y2Njh4eFubm5EREQ1NTVpaWktLS1lZWW/v79zc3N6enpOTk48PDytra2SkpKHh4dcXFxKSkogICANDQ0sfVPvAAADF0lEQVR4nO3ZiXLaMBCAYdsSxQIMFmBMIJDr/d+xK1kYpjidhGnHUvt/CTlIMqNltasjWQYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf5fa79XYY/gjlpPJshx7EH/AYjqZTBbhGzMfdSyPsJXtBq0kkGmYW6fzKbXcLIq8sP4rdc3Isl0/zcYc1QMkkDz3r/41I3bdrJ/2447r+/QlJbYP5Nw07WHx+z+Lj3IpcaMOU2ue5U3btMuxx/V9tURSZzdT66Vtmpf0ula2kkAKdQ1kL3Gs9dij+gZzabBWqkSXl0DUoV23k/AjXazGGt6X2UrbLhQlccxsGQKZttKzQkM+bI5nE/uCot2MCgOWctflXJWlzRaSkObkn51sdtvnYz3qKL/A1XhR+H4lQdm+uNW0Obj5dDrudtvt82v0+0jjUuIeMndW5vYnusiyYr1zceyOKSzwtgtF27tWaw8bF8Vuc44+Hx3rA8nv6jnf7iSM7SH6+ugZVykDm5GphPGa1m5LOtbAs+a4mZossdXdDj25vC+cVJmV8cq4F0Q5F1adwYRk5m0TvK3ziEOp/GooeyzZnQzOocX7j17Ma2LtIpi5OPJPWuzzJYyPjzcbb0oqWQtnwWBGzEefkPdzvHEIV8Yr496Gu+yyV/wz/SsR9WDbcs1s3r2nkRBTz4a6q5FekNQ1ij+UDOxRfHuOuFn9wu/jh157E5rzIolQXBiFPCpzXwZGh1CG1/2oSHH4wbpjra5uq7qq5IOqu2x1RR8zt6iHyaPqm1kkierugJT/DV1GHodkRCZON3r/4ksIovR3waH8fSjRl8nK2nDEVTLJcpNlsonMZdPujr9hm6isiv5a64afQvJZu9st33o/2RJHzl4GrrtreeVvJMYe1QP6qVR3GfFTTSc0owLVVXrmA+luVNyJqxp1UA+QpS8vuqXdnVF8Itz/FdPaamW+Qi6HxD4Q348jPt8Oku1vEc5Wui8NWSHrlPquZ/o5dM2IJGpgA5aMOv/sJiIxql/RU5fUfgQAAAAAAAAAAAAAAAAAAAAAAAAAAAD43/wEfmYcGzg+iAIAAAAASUVORK5CYII=";
-    setTimeout(() => {
-      img.src = "/video_feed";
-    }, 1000);
+    id('inst').innerHTML="";
+    id('challenge_box').classList.add("hidden");
+    let instructions = gen('div');
+    let header = gen('h1');
+    let inst_pic = gen('div');
+    let description = gen('h4');
+    let ready_btn = gen('p');
+
+    instructions.classList.add("instruction");
+    inst_pic.classList.add("inst-image");
+    description.classList.add("challenge-desc")
+    description.textContent = "Please place you laptop down on the ground, having the web cam around eye level. When ready and in a tall plank, go ahead and click ready and the timer will start!"
+    ready_btn.id = "ready-btn";
+    ready_btn.textContent = "Ready!";
+    header.textContent = "Welcome to the Challenge!";
+
+    instructions.appendChild(header);
+    instructions.appendChild(inst_pic);
+    instructions.appendChild(description);
+    instructions.appendChild(ready_btn);
+    id("inst").appendChild(instructions);
+    
+    ready_btn.addEventListener('click', playChallenge);
   }
+
+  function playChallenge() {
+    id('challenge_box').classList.remove("hidden");
+    id('inst').innerHTML="";
+    let img = id("challenge_window");
+    img.src = "https://acegif.com/wp-content/uploads/loading-36.gif";
+    setTimeout(() => {img.src="/video_feed"}, 1000);
+  }
+
   function addGIFClass(e, cardId, cardImg) {
     console.log("change to gif");
     let urlPath = "../static/images/" + cardId + ".gif";
