@@ -256,7 +256,13 @@ ul {
   text-align: center;
 }
 
-#challenge_window {
+#squats_window {
+  width: "1286px";
+  height: "723.375px";
+}
+
+#challenge_window,
+#squats_window {
   border: solid 3px #5391ee;
 }
 
