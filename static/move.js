@@ -80,13 +80,13 @@
     }
     id('moveio').addEventListener('click', toggleHomeView);
     id('challenge_btn').addEventListener('click', loadChallenge);
-    id('leaderboard_btn').addEventListener('click', leaderboardBuild);
+    // id('leaderboard_btn').addEventListener('click', leaderboardBuild);
   }
 
   function loadPages() {
     loadClasses();
     loadChallenge();
-    leaderboardBuild();
+    // leaderboardBuild();
   }
 
   function toggleViewOn(e, navbarLinks) {
@@ -165,41 +165,41 @@
     cardImg.style.backgroundImage = "url(" + pic + ")";
   }
 
-  function leaderboardBuild() {
-    id('podium_area').innerHTML="";
-    fetch("/leaderboard")
-      .then((res) => res.json())
-      .then((res) => {
-        res = res.data;
-        for (let i = 0; i < res.length; i++) {
-          let ident = res[i][0];
-          let count = res[i][1][0];
-          let angle = res[i][1][1];
-          let place = i + 1;
+//   function leaderboardBuild() {
+//     id('podium_area').innerHTML="";
+//     fetch("/leaderboard")
+//       .then((res) => res.json())
+//       .then((res) => {
+//         res = res.data;
+//         for (let i = 0; i < res.length; i++) {
+//           let ident = res[i][0];
+//           let count = res[i][1][0];
+//           let angle = res[i][1][1];
+//           let place = i + 1;
 
-          let podium = gen("div");
-          podium.id = place + "_place";
-          podium.classList.add("podium");
-          let rank = gen("p");
-          rank.classList.add("rank");
-          rank.textContent = place;
-          let name_card = gen("p");
-          name_card.classList.add("name_card");
-          name_card.textContent = ident;
-          let score = gen("p");
-          score.classList.add("score");
-          score.textContent = count;
+//           let podium = gen("div");
+//           podium.id = place + "_place";
+//           podium.classList.add("podium");
+//           let rank = gen("p");
+//           rank.classList.add("rank");
+//           rank.textContent = place;
+//           let name_card = gen("p");
+//           name_card.classList.add("name_card");
+//           name_card.textContent = ident;
+//           let score = gen("p");
+//           score.classList.add("score");
+//           score.textContent = count;
 
-          podium.appendChild(rank);
-          podium.appendChild(name_card);
-          podium.appendChild(score);
-          id("podium_area").appendChild(podium);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+//           podium.appendChild(rank);
+//           podium.appendChild(name_card);
+//           podium.appendChild(score);
+//           id("podium_area").appendChild(podium);
+//         }
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   }
 
   /**
    * shortcut function to select object using ID and make object
