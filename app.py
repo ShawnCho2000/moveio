@@ -9,8 +9,12 @@ import os
 
 f = open('data.json', "r")
 data = json.load(f)
-print(sorted(data.items(), key=lambda x: x[1][0], reverse=True))
+# print(sorted(data.items(), key=lambda x: x[1][0], reverse=True))
 f.close()
+f1 = open('personal.json', "r")
+data1 = json.load(f1)
+print(data1["data"])
+f1.close()
 
 classes = {
     "yoga": {},
@@ -71,6 +75,11 @@ def score():
 def leaderboard():
     sorting = (sorted(data.items(), key=lambda x: x[1][0], reverse=True))
     return {'data': sorting}
+
+@app.route('/profile')
+def profile():
+    # sorting = (sorted(data.items(), key=lambda x: x[1][0], reverse=True))
+    return data1
 
 def generate_frames():
     pTime = 0
@@ -153,6 +162,11 @@ def generate_frames2():
                             print(data)
                             with open('data.json', 'w') as outfile:
                                 outfile.write(json.dumps(data))
+                            data1["data"].append([i, round(np.average(angle), 2)])
+                            print(data1)
+                            with open('personal.json', 'w') as outfile:
+                                outfile.write(json.dumps(data1))
+                            done = True
                             done = True
 
                         img.flags.writeable = True
