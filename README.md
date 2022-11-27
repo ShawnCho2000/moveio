@@ -1,5 +1,4 @@
-[![Move.io demo](https://img.youtube.com/vi/cZlu7-VtKBo&t=53s/0.jpg)](https://www.youtube.com/watch?v=cZlu7-VtKBo&t=53s)
-
+[![Move.io demo](https://img.youtube.com/vi/cZlu7-VtKBo/0.jpg)](https://www.youtube.com/watch?v=cZlu7-VtKBo&t=53s)
 
 ## Inspiration
 Through covid we saw a huge increase of virtual learning. 
